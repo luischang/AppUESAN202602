@@ -22,9 +22,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen(){
+fun LoginScreen(navController: NavController){
     var email by remember { mutableStateOf("") }
     var password by remember {mutableStateOf("")}
 
@@ -57,7 +58,7 @@ fun LoginScreen(){
         Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = {
-
+                navController.navigate("home")
             },
             enabled = email.isNotBlank() && password.isNotBlank(),
             modifier = Modifier.fillMaxWidth()
