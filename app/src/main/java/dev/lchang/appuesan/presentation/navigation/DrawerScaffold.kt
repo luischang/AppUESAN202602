@@ -28,7 +28,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DrawerScafoold(navController: NavController,
+fun DrawerScaffold(navController: NavController,
                    content: @Composable () -> Unit)
 {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
