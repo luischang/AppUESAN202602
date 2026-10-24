@@ -23,6 +23,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import dev.lchang.appuesan.data.remote.FirebaseAuthManager
 import kotlinx.coroutines.launch
 
 
@@ -81,6 +82,13 @@ fun DrawerScaffold(navController: NavController,
                     selected = false,
                     onClick = {
                         navController.navigate("apifootball")
+                    }
+                )
+                NavigationDrawerItem(
+                    label = { Text("Firebase Logout")},
+                    selected = false,
+                    onClick = {
+                        FirebaseAuthManager.logout()
                     }
                 )
             }
