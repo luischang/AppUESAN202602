@@ -1,11 +1,12 @@
 package dev.lchang.appuesan.data.remote.apifootball
 
+import dev.lchang.appuesan.BuildConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val BASE_URL = "https://v3.football.api-sports.io/"
-private const val API_KEY = "b6177a72452bab38c2942e5801fc7e39"
+private const val BASE_URL = BuildConfig.API_BASE_URL
+private const val API_KEY = BuildConfig.API_KEY
 
 object RetrofitInstance {
     private val client = OkHttpClient.Builder()
