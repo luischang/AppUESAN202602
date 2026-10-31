@@ -89,6 +89,11 @@ fun DrawerScaffold(navController: NavController,
                     selected = false,
                     onClick = {
                         FirebaseAuthManager.logout()
+                        scope.launch { drawerState.close() }
+                        // Volver al login y borrar el historial para no regresar con "atrás"
+                        navController.navigate("login") {
+                            popUpTo(0) { inclusive = true }
+                        }
                     }
                 )
             }
